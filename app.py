@@ -1,11 +1,10 @@
+import csv
 import pathlib
 
-import csv
+import flask_admin as admin
 from flask import Flask
 
-import flask_admin as admin
-
-from flask_admin_csv_model.contrib.csv import ModelView, Model, TextField
+from flask_admin_csv_model.contrib.csv import Model, ModelView, TextField
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "123456790"
@@ -47,7 +46,5 @@ if __name__ == "__main__":
     logging.getLogger().setLevel(logging.DEBUG)
 
     admin = admin.Admin(app, name="Example: Csv")
-
     admin.add_view(DataAdmin(Data))
-
     app.run(debug=True)

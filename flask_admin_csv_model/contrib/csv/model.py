@@ -1,6 +1,6 @@
 import csv
-import pathlib
 import itertools
+import pathlib
 
 
 class TextField:
